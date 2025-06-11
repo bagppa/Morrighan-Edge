@@ -10,11 +10,11 @@ body {
 .hero {
   text-align: center;
   padding: 4rem 1rem;
-  background: #111;
+  background: #000000;
 }
 
 .logo {
-  height: 200px;
+  height: 250px;
   margin-bottom: 1rem;
 }
 
