@@ -1,61 +1,82 @@
 <!doctype html>
+
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /><title>Morrighan Edge · Defence Insight · Venture Advisory · Capability Growth</title>
+<meta name="description" content="Advisory and training rooted in Defence experience, DV clearance, and innovation delivery." />
 
-    <title>Morrighan Edge · Defence Insight · Venture Advisory · Capability Growth</title>
-    <meta name="description" content="Advisory and training rooted in Defence experience, DV clearance, and innovation delivery." />
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Morrighan Edge" />
+<meta property="og:description" content="Advisory and training rooted in Defence experience, DV clearance, and innovation delivery." />
+<meta property="og:image" content="/assets/og-image.jpg" />
+<meta property="og:url" content="https://example.com" />
+<meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Morrighan Edge" />
-    <meta property="og:description" content="Advisory and training rooted in Defence experience, DV clearance, and innovation delivery." />
-    <meta property="og:image" content="/assets/og-image.jpg" />
-    <meta property="og:url" content="https://example.com" />
-    <meta name="twitter:card" content="summary_large_image" />
+<!-- Favicon -->
+<link rel="icon" href="/assets/favicon.ico" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/favicon.ico" />
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Tailwind (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              accent: {
-                DEFAULT: '#800000' // deep maroon accent
-              }
-            },
-            fontFamily: { sans: ['Inter', 'system-ui', 'ui-sans-serif', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'] }
+<!-- Tailwind (CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          accent: {
+            DEFAULT: '#800000',
+            light: '#a83232',
+            dark: '#4d0000'
           }
-        }
+        },
+        fontFamily: { sans: ['Inter', 'system-ui', 'ui-sans-serif', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'] }
       }
-    </script>
+    }
+  }
+</script>
 
-    <style>
-      /* Animated gradient background */
-      .bg-animated {
-        background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #1a0f0f, #111111);
-        background-size: 400% 400%;
-        animation: gradientBG 20s ease infinite;
-      }
-      @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-      }
-      /* Scroll animations */
-      [data-animate] { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
-      [data-animate].in-view { opacity: 1; transform: translateY(0); }
-    </style>
+<style>
+  /* Animated gradient background */
+  .bg-animated {
+    background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #1a0f0f, #111111);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+  }
+  @keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  /* Scroll animations */
+  [data-animate] { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+  [data-animate].in-view { opacity: 1; transform: translateY(0); }
+  /* Section header underline */
+  section h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+  }
+  section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 60px;
+    background: #800000;
+    transition: width .5s ease;
+  }
+  [data-animate].in-view h2::after {
+    width: 100px;
+  }
+</style>
+
   </head>
   <body class="bg-black text-white font-sans">
     <!-- Nav -->
@@ -85,141 +106,147 @@
           <a href="#contact" class="hover:text-accent">Contact</a>
         </nav>
       </div>
-    </header>
-
-    <!-- Hero -->
-    <section id="top" class="relative isolate overflow-hidden bg-animated">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="py-32 grid lg:grid-cols-2 gap-12 items-center">
-          <div data-animate>
-            <h1 class="mt-3 text-5xl sm:text-6xl font-extrabold leading-tight whitespace-pre-line tracking-tight">
-Sharper Thinking for Operational Advantage
-            </h1>
-            <p class="mt-4 text-xl text-white/80 max-w-xl">
-              Independent insight bridging Defence requirements with innovators and investors.
-            </p>
-            <div class="mt-8 flex gap-4">
-              <a href="#services" class="inline-flex items-center rounded-xl bg-accent px-6 py-3 font-semibold text-white hover:opacity-90 transition">Our Services</a>
-              <a href="#contact" class="inline-flex items-center rounded-xl border border-accent px-6 py-3 font-semibold text-accent hover:bg-accent hover:text-white transition">Get in Touch</a>
-            </div>
-          </div>
-          <div class="relative flex items-center justify-center" data-animate>
-            <div class="aspect-square w-full max-w-md rounded-3xl border border-white/10 p-10 flex items-center justify-center shadow-lg shadow-accent/30">
-              <img src="/logo-light.png" alt="Morrighan Edge" class="w-3/4 h-3/4 object-contain animate-pulse" />
-            </div>
-          </div>
+    </header><!-- Hero -->
+<section id="top" class="relative isolate overflow-hidden bg-animated">
+  <!-- Background motif -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+    <div class="py-32 grid lg:grid-cols-2 gap-12 items-center">
+      <div data-animate>
+        <h1 class="text-6xl sm:text-7xl font-extrabold tracking-tight">Morrighan Edge</h1>
+        <p class="mt-4 text-2xl sm:text-3xl font-semibold text-white/90">Sharper Thinking for Operational Advantage</p>
+        <p class="mt-6 text-xl text-white/80 max-w-xl">
+          Independent insight bridging Defence requirements with innovators and investors.
+        </p>
+        <div class="mt-8 flex gap-4">
+          <a href="#services" class="inline-flex items-center rounded-xl bg-accent px-6 py-3 font-semibold text-white hover:bg-accent-light transition">Our Services</a>
+          <a href="#contact" class="inline-flex items-center rounded-xl border border-accent px-6 py-3 font-semibold text-accent hover:bg-accent hover:text-white transition">Get in Touch</a>
         </div>
       </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="py-24 border-t border-white/10">
-      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl space-y-6" data-animate>
-          <h2 class="text-3xl font-bold">About</h2>
-          <p class="text-white/80">Founded by an Army officer and innovator with 15 years in the MOD and National Security. Morrighan Edge brings Defence credibility, DV clearance, and venture insight to help organisations turn ideas into capabilities.</p>
-          <p class="text-white/80">Like the Celtic goddess it is named for, Morrighan Edge represents foresight in strategy and sharper thinking at the leading edge — innovation made relevant to those who use it.</p>
+      <div class="relative flex items-center justify-center" data-animate>
+        <div class="aspect-square w-full max-w-md rounded-3xl border border-white/10 p-10 flex items-center justify-center shadow-lg shadow-accent/30">
+          <img src="/logo-light.png" alt="Morrighan Edge" class="w-3/4 h-3/4 object-contain animate-pulse" />
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Services -->
-    <section id="services" class="py-24 border-t border-white/10">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mb-12" data-animate>
-          <h2 class="text-3xl font-bold">Services</h2>
-        </div>
+<!-- About -->
+<section id="about" class="py-24 border-t border-white/10">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl space-y-6" data-animate>
+      <h2 class="text-3xl font-bold">About</h2>
+      <p class="text-white/80">Founded by an Army officer and innovator with 15 years in the MOD and National Security. Morrighan Edge brings Defence credibility, DV clearance, and venture insight to help organisations turn ideas into capabilities.</p>
+      <p class="text-white/80">Like the Celtic goddess it is named for, Morrighan Edge represents foresight in strategy and sharper thinking at the leading edge — innovation made relevant to those who use it.</p>
+    </div>
+  </div>
+</section>
 
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6 transform transition duration-300 hover:scale-105 hover:bg-white/[.05] shadow-lg shadow-black/20" data-animate>
-            <h3 class="text-xl font-semibold">Defence Insight</h3>
-            <p class="mt-2 text-white/70">Support with requirements translation, adoption pathways, and operational relevance.</p>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6 transform transition duration-300 hover:scale-105 hover:bg-white/[.05] shadow-lg shadow-black/20" data-animate>
-            <h3 class="text-xl font-semibold">Venture Advisory</h3>
-            <p class="mt-2 text-white/70">Critical analysis of Defence-facing venture opportunities for investors and startups.</p>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6 transform transition duration-300 hover:scale-105 hover:bg-white/[.05] shadow-lg shadow-black/20" data-animate>
-            <h3 class="text-xl font-semibold">Capability Growth</h3>
-            <p class="mt-2 text-white/70">Red teaming, strategic briefings, and contributions to Defence and industry discussions.</p>
-          </div>
-        </div>
+<!-- Services -->
+<section id="services" class="py-24 border-t border-white/10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mb-12" data-animate>
+      <h2 class="text-3xl font-bold">Services</h2>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6 transform transition duration-300 hover:scale-105 hover:bg-white/[.05] shadow-lg shadow-black/20" data-animate>
+        <h3 class="text-xl font-semibold">Defence Insight</h3>
+        <p class="mt-2 text-white/70">Support with requirements translation, adoption pathways, and operational relevance.</p>
       </div>
-    </section>
-
-    <!-- Track Record -->
-    <section id="track" class="py-24 border-t border-white/10">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mb-12" data-animate>
-          <h2 class="text-3xl font-bold">Track Record</h2>
-        </div>
-
-        <div class="grid gap-8 md:grid-cols-2">
-          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
-            <h3 class="text-xl font-semibold">Project MORRIGHAN</h3>
-            <p class="mt-2 text-white/70">Uncrewed CASEVAC and logistics by UxS, recognised with an innovation award and briefed at senior government level.</p>
-          </article>
-          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
-            <h3 class="text-xl font-semibold">Infantry FPV Training</h3>
-            <p class="mt-2 text-white/70">Drone-enabled training realism, incorporating lessons from Ukraine and other contemporary conflicts.</p>
-          </article>
-          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
-            <h3 class="text-xl font-semibold">Project SPIELBERG</h3>
-            <p class="mt-2 text-white/70">Trialled and scaled battle effects equipment across multiple Defence end users, reducing reliance on pyrotechnics.</p>
-          </article>
-          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
-            <h3 class="text-xl font-semibold">VetVision AI</h3>
-            <p class="mt-2 text-white/70">Guided Defence medical adoption pathway for an AI-based tool, aligning technology with user needs.</p>
-          </article>
-        </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6 transform transition duration-300 hover:scale-105 hover:bg-white/[.05] shadow-lg shadow-black/20" data-animate>
+        <h3 class="text-xl font-semibold">Venture Advisory</h3>
+        <p class="mt-2 text-white/70">Critical analysis of Defence-facing venture opportunities for investors and startups.</p>
       </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-24 border-t border-white/10">
-      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12" data-animate>
-          <h2 class="text-3xl font-bold">Contact</h2>
-          <p class="mt-4 text-white/80">Let’s discuss how Morrighan Edge can support your project or investment.</p>
-        </div>
-
-        <!-- Replace mailto with Formspree (or other service) -->
-        <form class="grid gap-4" action="https://formspree.io/f/yourformid" method="POST" data-animate>
-          <div class="grid sm:grid-cols-2 gap-4">
-            <input id="name" name="name" placeholder="Name" required class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" />
-            <input id="email" name="email" type="email" placeholder="Email" required class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" />
-          </div>
-          <select id="type" name="type" class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent">
-            <option>Startup (advisory)</option>
-            <option>MOD / Police (training)</option>
-            <option>Investor (insight)</option>
-            <option>Other</option>
-          </select>
-          <textarea id="message" name="message" rows="5" placeholder="Message" class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent"></textarea>
-          <button class="inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 font-semibold text-white hover:opacity-90 transition" type="submit">Send</button>
-        </form>
+      <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6 transform transition duration-300 hover:scale-105 hover:bg-white/[.05] shadow-lg shadow-black/20" data-animate>
+        <h3 class="text-xl font-semibold">Capability Growth</h3>
+        <p class="mt-2 text-white/70">Red teaming, strategic briefings, and contributions to Defence and industry discussions.</p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="py-10 border-t border-white/10">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
-        <p>© <span id="year"></span> Morrighan Edge. All rights reserved.</p>
-        <p>DV-cleared · MOD-experienced · Innovation delivery</p>
+<!-- Track Record -->
+<section id="track" class="py-24 border-t border-white/10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mb-12" data-animate>
+      <h2 class="text-3xl font-bold">Track Record</h2>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
+        <h3 class="text-xl font-semibold">Project MORRIGHAN</h3>
+        <p class="mt-2 text-white/70">Uncrewed CASEVAC and logistics by UxS, recognised with an innovation award and briefed at senior government level.</p>
+      </article>
+      <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
+        <h3 class="text-xl font-semibold">Infantry FPV Training</h3>
+        <p class="mt-2 text-white/70">Drone-enabled training realism, incorporating lessons from Ukraine and other contemporary conflicts.</p>
+      </article>
+      <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
+        <h3 class="text-xl font-semibold">Project SPIELBERG</h3>
+        <p class="mt-2 text-white/70">Trialled and scaled battle effects equipment across multiple Defence end users, reducing reliance on pyrotechnics.</p>
+      </article>
+      <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
+        <h3 class="text-xl font-semibold">VetVision AI</h3>
+        <p class="mt-2 text-white/70">Guided Defence medical adoption pathway for an AI-based tool, aligning technology with user needs.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 border-t border-white/10">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-animate>
+      <h2 class="text-3xl font-bold">Contact</h2>
+      <p class="mt-4 text-white/80">Let’s discuss how Morrighan Edge can support your project or investment.</p>
+    </div>
+
+    <!-- Replace mailto with Formspree (or other service) -->
+    <form class="grid gap-4" action="https://formspree.io/f/yourformid" method="POST" data-animate>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <input id="name" name="name" placeholder="Name" required class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" />
+        <input id="email" name="email" type="email" placeholder="Email" required class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" />
       </div>
-    </footer>
+      <select id="type" name="type" class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent">
+        <option>Startup (advisory)</option>
+        <option>MOD / Police (training)</option>
+        <option>Investor (insight)</option>
+        <option>Other</option>
+      </select>
+      <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent"></textarea>
+      <button class="inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 font-semibold text-white hover:bg-accent-light transition" type="submit">Send</button>
+    </form>
+  </div>
+</section>
 
-    <script>
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-      document.getElementById('year').textContent = new Date().getFullYear();
-      const els = document.querySelectorAll('[data-animate]');
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
-      }, { threshold: 0.1 });
-      els.forEach(el=>io.observe(el));
-    </script>
-  </body>
-</html>
+<!-- Footer -->
+<footer class="py-10 border-t border-white/10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+    <p>© <span id="year"></span> Morrighan Edge. All rights reserved.</p>
+    <p>DV-cleared · MOD-experienced · Innovation delivery</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const els = document.querySelectorAll('[data-animate]');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  els.forEach(el=>io.observe(el));
+</
 
