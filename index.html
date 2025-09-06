@@ -31,7 +31,7 @@
           extend: {
             colors: {
               accent: {
-                DEFAULT: '#2F7CFF'
+                DEFAULT: '#800000' // deep maroon accent
               }
             },
             fontFamily: { sans: ['Inter', 'system-ui', 'ui-sans-serif', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'] }
@@ -41,6 +41,18 @@
     </script>
 
     <style>
+      /* Animated gradient background */
+      .bg-animated {
+        background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #1a0f0f, #111111);
+        background-size: 400% 400%;
+        animation: gradientBG 20s ease infinite;
+      }
+      @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+      }
+      /* Scroll animations */
       [data-animate] { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
       [data-animate].in-view { opacity: 1; transform: translateY(0); }
     </style>
@@ -51,7 +63,7 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <a href="#top" class="flex items-center gap-3">
-            <img src="/assets/logo-light.png" alt="Morrighan Edge" class="h-8 w-auto" />
+            <img src="/logo-light.svg" alt="Morrighan Edge" class="h-8 w-auto" />
             <span class="sr-only">Morrighan Edge</span>
           </a>
           <nav class="hidden md:flex items-center gap-8 text-sm">
@@ -76,20 +88,26 @@
     </header>
 
     <!-- Hero -->
-    <section id="top" class="relative isolate overflow-hidden">
+    <section id="top" class="relative isolate overflow-hidden bg-animated">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="py-24 sm:py-32 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="py-32 grid lg:grid-cols-2 gap-12 items-center">
           <div data-animate>
-            <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold leading-tight whitespace-pre-line">
-Morrighan Edge
+            <h1 class="mt-3 text-5xl sm:text-6xl font-extrabold leading-tight whitespace-pre-line tracking-tight">
+Sharper Thinking
+Operational Advantage
+Real Capability
             </h1>
-            <p class="mt-2 text-xl text-white/70">
-              Sharper thinking for operational advantage.
+            <p class="mt-4 text-xl text-white/80 max-w-xl">
+              Independent insight bridging Defence requirements with innovators and investors.
             </p>
+            <div class="mt-8 flex gap-4">
+              <a href="#services" class="inline-flex items-center rounded-xl bg-accent px-6 py-3 font-semibold text-white hover:opacity-90 transition">Our Services</a>
+              <a href="#contact" class="inline-flex items-center rounded-xl border border-accent px-6 py-3 font-semibold text-accent hover:bg-accent hover:text-white transition">Get in Touch</a>
+            </div>
           </div>
           <div class="relative flex items-center justify-center" data-animate>
-            <div class="aspect-square w-full max-w-md rounded-3xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10 p-10 flex items-center justify-center">
-              <img src="/assets/logo-light.png" alt="Morrighan Edge" class="w-3/4 h-3/4 object-contain" />
+            <div class="aspect-square w-full max-w-md rounded-3xl border border-white/10 p-10 flex items-center justify-center shadow-lg shadow-accent/30">
+              <img src="/logo-light.svg" alt="Morrighan Edge" class="w-3/4 h-3/4 object-contain animate-pulse" />
             </div>
           </div>
         </div>
@@ -97,61 +115,61 @@ Morrighan Edge
     </section>
 
     <!-- About -->
-    <section id="about" class="py-20 border-t border-white/10">
+    <section id="about" class="py-24 border-t border-white/10">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl" data-animate>
+        <div class="max-w-3xl space-y-6" data-animate>
           <h2 class="text-3xl font-bold">About</h2>
-          <p class="mt-4 text-white/80">Founded by an Army officer and innovator with 15 years in the MOD and National Security.</p>
-          <p class="mt-4 text-white/80">Like the Celtic goddess the company is named for, we deliver foresight in strategy and sharper thinking at the leading edge — innovation made relevant to those who use it.</p>
+          <p class="text-white/80">Founded by an Army officer and innovator with 15 years in the MOD and National Security. Morrighan Edge brings Defence credibility, DV clearance, and venture insight to help organisations turn ideas into capabilities.</p>
+          <p class="text-white/80">Like the Celtic goddess it is named for, Morrighan Edge represents foresight in strategy and sharper thinking at the leading edge — innovation made relevant to those who use it.</p>
         </div>
       </div>
     </section>
 
     <!-- Services -->
-    <section id="services" class="py-20 border-t border-white/10">
+    <section id="services" class="py-24 border-t border-white/10">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl" data-animate>
+        <div class="max-w-3xl mb-12" data-animate>
           <h2 class="text-3xl font-bold">Services</h2>
         </div>
 
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6" data-animate>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6 transform transition duration-300 hover:scale-105 hover:bg-white/[.05] shadow-lg shadow-black/20" data-animate>
             <h3 class="text-xl font-semibold">Defence Insight</h3>
-            <p class="mt-2 text-white/70">Support with requirements translation and adoption pathways.</p>
+            <p class="mt-2 text-white/70">Support with requirements translation, adoption pathways, and operational relevance.</p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6" data-animate>
+          <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6 transform transition duration-300 hover:scale-105 hover:bg-white/[.05] shadow-lg shadow-black/20" data-animate>
             <h3 class="text-xl font-semibold">Venture Advisory</h3>
-            <p class="mt-2 text-white/70">Analysis of Defence-facing venture opportunities for investors and founders.</p>
+            <p class="mt-2 text-white/70">Critical analysis of Defence-facing venture opportunities for investors and startups.</p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6" data-animate>
+          <div class="rounded-2xl border border-white/10 bg-white/[.02] p-6 transform transition duration-300 hover:scale-105 hover:bg-white/[.05] shadow-lg shadow-black/20" data-animate>
             <h3 class="text-xl font-semibold">Capability Growth</h3>
-            <p class="mt-2 text-white/70">Red teaming, briefings, and contributions to Defence and industry discussions.</p>
+            <p class="mt-2 text-white/70">Red teaming, strategic briefings, and contributions to Defence and industry discussions.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Track Record -->
-    <section id="track" class="py-20 border-t border-white/10">
+    <section id="track" class="py-24 border-t border-white/10">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl" data-animate>
+        <div class="max-w-3xl mb-12" data-animate>
           <h2 class="text-3xl font-bold">Track Record</h2>
         </div>
 
-        <div class="mt-10 grid gap-6 md:grid-cols-2">
-          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6" data-animate>
+        <div class="grid gap-8 md:grid-cols-2">
+          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
             <h3 class="text-xl font-semibold">Project MORRIGHAN</h3>
-            <p class="mt-2 text-white/70">Leading MOD experimentation with uncrewed CASEVAC and logistics by UxS, recognised with an innovation award and briefed at senior government level.</p>
+            <p class="mt-2 text-white/70">Uncrewed CASEVAC and logistics by UxS, recognised with an innovation award and briefed at senior government level.</p>
           </article>
-          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6" data-animate>
+          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
             <h3 class="text-xl font-semibold">Infantry FPV Training</h3>
-            <p class="mt-2 text-white/70">Developing Drone-enabled training realism, incorporating lessons from Ukraine and other contemporary conflicts.</p>
+            <p class="mt-2 text-white/70">Drone-enabled training realism, incorporating lessons from Ukraine and other contemporary conflicts.</p>
           </article>
-          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6" data-animate>
+          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
             <h3 class="text-xl font-semibold">Project SPIELBERG</h3>
             <p class="mt-2 text-white/70">Trialled and scaled battle effects equipment across multiple Defence end users, reducing reliance on pyrotechnics.</p>
           </article>
-          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6" data-animate>
+          <article class="rounded-2xl border border-white/10 bg-white/[.02] p-6 hover:bg-white/[.05] transition" data-animate>
             <h3 class="text-xl font-semibold">VetVision AI</h3>
             <p class="mt-2 text-white/70">Guided Defence medical adoption pathway for an AI-based tool, aligning technology with user needs.</p>
           </article>
@@ -160,41 +178,27 @@ Morrighan Edge
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-20 border-t border-white/10">
+    <section id="contact" class="py-24 border-t border-white/10">
       <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center" data-animate>
+        <div class="text-center mb-12" data-animate>
           <h2 class="text-3xl font-bold">Contact</h2>
-          <p class="mt-4 text-white/80">Get in touch to discuss projects, consultations, or collaboration.</p>
+          <p class="mt-4 text-white/80">Let’s discuss how Morrighan Edge can support your project or investment.</p>
         </div>
 
-        <form class="mt-10 grid gap-4" action="mailto:info@example.com" method="post" enctype="text/plain" data-animate>
+        <!-- Replace mailto with Formspree (or other service) -->
+        <form class="grid gap-4" action="https://formspree.io/f/yourformid" method="POST" data-animate>
           <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="text-sm text-white/70" for="name">Name</label>
-              <input id="name" name="name" required class="mt-1 w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" />
-            </div>
-            <div>
-              <label class="text-sm text-white/70" for="email">Email</label>
-              <input id="email" name="email" type="email" required class="mt-1 w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" />
-            </div>
+            <input id="name" name="name" placeholder="Name" required class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" />
+            <input id="email" name="email" type="email" placeholder="Email" required class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" />
           </div>
-          <div>
-            <label class="text-sm text-white/70" for="type">Enquiry type</label>
-            <select id="type" name="type" class="mt-1 w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent">
-              <option>Startup (advisory)</option>
-              <option>MOD / Police (training)</option>
-              <option>Investor (insight)</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label class="text-sm text-white/70" for="message">Message</label>
-            <textarea id="message" name="message" rows="5" class="mt-1 w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent"></textarea>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-sm text-white/60">Or email directly: <a class="text-accent underline" href="mailto:info@morrighanedge.co.uk">info@morrighanedge.co.uk</a></p>
-            <button class="inline-flex items-center rounded-xl bg-accent px-6 py-3 font-semibold text-black hover:opacity-90" type="submit">Send</button>
-          </div>
+          <select id="type" name="type" class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent">
+            <option>Startup (advisory)</option>
+            <option>MOD / Police (training)</option>
+            <option>Investor (insight)</option>
+            <option>Other</option>
+          </select>
+          <textarea id="message" name="message" rows="5" placeholder="Message" class="w-full rounded-xl bg-white/[.06] border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent"></textarea>
+          <button class="inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 font-semibold text-white hover:opacity-90 transition" type="submit">Send</button>
         </form>
       </div>
     </section>
@@ -220,3 +224,4 @@ Morrighan Edge
     </script>
   </body>
 </html>
+
